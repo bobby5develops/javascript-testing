@@ -3,7 +3,6 @@
 var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
-
 var pkg = require('./../package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
@@ -75,7 +74,16 @@ function runTests() {
         });
 
     });
+    describe('Array', function() {
+        describe('#indexOf()', function () {
+            it('should return -1 when the value is not present', function () {
+                assert.equal(-1, [1, 2, 3].indexOf(5));
+                assert.equal(-1, [1, 2, 3].indexOf(0));
+            });
+        });
+    });
 
 }
 
 runTests();
+
